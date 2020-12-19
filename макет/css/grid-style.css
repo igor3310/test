@@ -1,0 +1,58 @@
+/*Паддинги не увеличивают размер блока СТАРТ*/
+html{
+    box-sizing: border-box;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+/*Паддинги не увеличивают размер блока ЕНД*/
+
+body{
+	text-align:center;
+	padding:0; 
+	background:#fff; 
+	color:#333; 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+	}
+
+/* вместо этого подключаем файл reset.css для обнуления
+*{
+margin:0;
+padding:0;
+border:0;}
+*/
+header, section, footer, aside, nav, article {
+	 display: block; 
+}
+.cleaarfix{
+	clear:both;
+}
+#container{
+	display: grid;
+     grid-template-columns: repeat(12, 1fr);
+ 
+ 
+	max-width:1500px;
+	margin:0 auto;
+}
+#content{
+background: red;	
+grid-column: span 8;
+float:right;
+}
+#nav{
+background: green ;	
+grid-column: span 4;
+float:left;
+}
+
+@media(max-width:1000px){
+	#content{
+	grid-row-start: -1;
+	}
+}
